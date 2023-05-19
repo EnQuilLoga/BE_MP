@@ -22,7 +22,8 @@ const specs = require("./swagger.json");
 
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
 
-app.use(express.json()); 
+app.use(express.json()); // doc bat cu du lieu trong body
+app.use(cors());
 
 app.use("/api/users", authRouter);
 app.use("/api/products", productRouter);
