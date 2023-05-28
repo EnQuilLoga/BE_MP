@@ -3,58 +3,35 @@ const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
     name: {
-        type: String,
+        type: String
     },
-    sku: {
-        type: String,
+    brand: {
+        type: String
     },
-    price: {
-        type: Number,
-    },
-    discount: {
-        type: Number,
-    },
-    news: {
-        type: Boolean,
-        default: false,
-        enum: [true, false],
-    },
-    tag: {
-        type: Array,
+    gender: {
+        type: String
     },
     category: {
-        type: Array,
+        type: String
     },
-    variation: [
-        {
-            color: {
-                type: String,
-            },
-            image: {
-                type: String,
-            },
-            size: [
-                {
-                    name: {
-                        type: String,
-                    },
-                    stock: {
-                        type: Number,
-                        default: 0,
-                    },
-                },
-            ],
-        },
-    ],
-    images: {
-        type: Array,
+    price: {
+        type: Number
     },
-    shortDescription: {
-        type: String,
+    is_in_inventory: {
+        type: Boolean
     },
-    fullDescription: {
-        type: String,
+    items_left: {
+        type: Number
     },
+    imageURL: {
+        type: String
+    },
+    slug: {
+        type: String
+    },
+    featured: {
+        type: Number
+    }
 });
 
 ProductSchema.set("timestamps", true);

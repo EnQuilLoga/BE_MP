@@ -35,7 +35,7 @@ router.post(
     "/register",
     asyncHandler(async (req, res) => {
         const { firstName, lastName, email, password, image } = req.body;
-
+console.log(req.body)
         const userExists = await User.findOne({ email });
 
         if (userExists) {

@@ -32,15 +32,21 @@ app.get("/api/config/paypal", (req, res) => {
     res.send(process.env.PAYPAL_CLIENT_ID);
 });
 
-
+//from here
 const dataProducts = JSON.parse(
     fs.readFileSync("./data/products.json", "utf-8")
+);
+
+const dataUser = JSON.parse(
+    fs.readFileSync("./data/user.json", "utf-8")
 );
 
 const importData = async () => {
     try {
         await Products.create(dataProducts);
+        // await Users.create(dataUser);
         console.log("data successfully imported");
+        
         // to exit the proces
         process.exit();
     } catch (error) {
@@ -48,7 +54,7 @@ const importData = async () => {
     }
 };
 
-// importData();
+importData(); //Import data product vào mongoDB
 
 const PORT = process.env.PORT || 5000;
 

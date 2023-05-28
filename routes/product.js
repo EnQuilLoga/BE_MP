@@ -21,9 +21,9 @@ router.get(
                 : {};
             const count = await Product.countDocuments({ ...keyword });
             const products = await Product.find({ ...keyword })
-                .limit(pageSize)
-                .skip(pageSize * (page - 1))
-                .sort({ _id: -1 });
+                // .limit(pageSize)
+                // .skip(pageSize * (page - 1))
+                // .sort({ _id: -1 });
             // res.json({ products });
             res.json({ products, page, count, pages: Math.ceil(count / pageSize) });
         } catch (err) {
