@@ -54,7 +54,7 @@ const importData = async () => {
     }
 };
 
-importData(); //Import data product vào mongoDB
+// importData(); //Import data product vào mongoDB
 
 const PORT = process.env.PORT || 5000;
 
